@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // Libreria para obtener instancia de almacenamiento 
 
+
 class PostController extends Controller
 {
     /**
@@ -15,9 +16,10 @@ class PostController extends Controller
     {
         $postlist = Post::all(); 
 
-        $cont = Post::all()->count();
+        //$cont = Post::all()->count();
+        $lastId = Post::orderBy('id', 'DESC')->first();
 
-        $postOne = Post::where('id',$cont)->first();
+        $postOne = Post::where('id',$lastId)->first();
         
         return view('post',[ 
             'postlist' => $postlist,
