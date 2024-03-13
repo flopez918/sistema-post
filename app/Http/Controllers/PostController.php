@@ -16,10 +16,7 @@ class PostController extends Controller
     {
         $postlist = Post::all(); 
 
-        //$cont = Post::all()->count();
-        $lastId = Post::orderBy('id', 'DESC')->first();
-
-        $postOne = Post::where('id',$lastId)->first();
+        $postOne = Post::orderBy('id', 'DESC')->first();
         
         return view('post',[ 
             'postlist' => $postlist,
