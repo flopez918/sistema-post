@@ -16,13 +16,13 @@ class PostController extends Controller
     {
         $postlist = Post::all(); 
 
-        
         $postOne = Post::orderBy('id', 'DESC')->first();
         
         return view('post',[ 
             'postlist' => $postlist,
             'postOne' => $postOne
          ]);
+
     }
 
     /**
@@ -31,6 +31,7 @@ class PostController extends Controller
     public function create()
     {
         return view('newPost');
+        
     }
 
     /**
