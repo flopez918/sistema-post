@@ -16,6 +16,7 @@ class PostController extends Controller
     {
         $postlist = Post::all(); 
 
+        
         $postOne = Post::orderBy('id', 'DESC')->first();
         
         return view('post',[ 
