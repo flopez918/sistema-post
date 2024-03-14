@@ -35,6 +35,7 @@
             <div class="row">
                 <form action="{{ url('/post') }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" id="user_id" name="user_id" value="{{ Auth::id(); }}">
                     <div class="mb-3">
                         <label for="title" class="form-label">Titulo:</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Titulo">

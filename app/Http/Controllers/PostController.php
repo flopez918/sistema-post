@@ -44,6 +44,7 @@ class PostController extends Controller
         if ($request->hasFile('image')) { // Si hay imagen 
 
             Post::create([
+                'user_id' => $request->user_id,
                 'title' => $request->title,
                 'post' => $request->post,
                 'image' => $request->file('image')->store('uploads','public'), // guarda y sube la imagen
