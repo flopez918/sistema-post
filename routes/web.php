@@ -19,11 +19,11 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-// Para ingresar a un método
-//Route::get('/post',[PostController::class,'index']);
-
 // Forma de acceder a todas las URLs del controlador respetando la autenticación
 Route::resource('post', PostController::Class)->middleware('auth');
+
+// Creará algunas rutas por defecto
+Auth::routes();
 
 // Rutas que se utilizan cuando se loguea
 Route::group(['middleware' => 'auth'], function () {
