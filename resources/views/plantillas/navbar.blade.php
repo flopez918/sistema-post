@@ -9,6 +9,11 @@
                 <li class="nav-item"><a class="nav-link" href="{{ url('add')}}">Adicionar Post</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    {{ method_field('POST') }}
+                    <input class="btn btn-danger" type="submit" value="Salir">
+                </form>
             </ul>
         </div>
     </div>

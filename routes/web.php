@@ -22,16 +22,11 @@ Route::get('/', function () {
 // Para ingresar a un método
 //Route::get('/post',[PostController::class,'index']);
 
-// Forma de ingresar a todas las rutas
+// Forma de acceder a todas las URLs del controlador respetando la autenticación
 Route::resource('post', PostController::Class)->middleware('auth');
 
-
-Auth::routes();
-
-Route::get('/home', [PostController::class, 'index'])->name('home');  
-
+// Rutas que se utilizan cuando se loguea
 Route::group(['middleware' => 'auth'], function () {
-    //Route::get('/home', [PostController::class, 'index'])->name('home');  // Redirecciona
     Route::get('/home',[PostController::class,'index'])->name('home');
     Route::get('/add', [PostController::class, 'create'])->name('newPost');
 });
