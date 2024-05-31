@@ -5,17 +5,17 @@
 @section('content')
 
 <!-- Page header with logo and tagline-->
-<header class="py-5 bg-light border-bottom mb-4">
+<header class="bg-light border-bottom mb-4">
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="{{ url('asset/public/image/header-1.jpg') }}" class="d-block w-100" alt="...">
+            <img src="{{ asset('image/header-1.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="{{ asset('image/header-2.jpg') }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+            <img src="{{ asset('image/header-1.jpg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage; // Libreria para obtener instancia de al
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the post.
      */
     public function index()
     {
@@ -69,6 +69,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=Post::findOrFail($id);  // Recupera información
+
         return view('editPost', compact('post')); // Envia al formulario
     }
 
@@ -97,6 +98,7 @@ class PostController extends Controller
     {
         //
         $post=Post::findOrFail($id);  // Recupera información
+        
         if(Storage::delete('public/'.$post->image)) // Se borra la imagen de la carpeta uploads
         {
             Post::destroy($id);
